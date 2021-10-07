@@ -39,18 +39,22 @@ equalsButton.addEventListener("click", function () {
   currentOperator = "";
   adjustCalcBackground(x);
 });
+
 // Function reading certain operation buttons presses
 let operationButtonsArray = Array.from(operationButtons);
 
 operationButtonsArray.forEach((button) =>
   button.addEventListener("click", function () {
+    // updating display
     if (previousOperandTextElement.innerText == "") {
       previousOperandTextElement.innerText = `${currentOperandText} ${button.textContent}`;
       currentOperator = button.textContent;
       previousOperandText = currentOperandText;
       currentOperandText = "";
       currentOperandTextElement.innerText = currentOperandText;
-    } else {
+    }
+    // Calculating if operantion button is clicked more than once and updating display
+    else {
       previousOperandText = operate(
         previousOperandText,
         currentOperandText,
@@ -96,14 +100,7 @@ function appendNumbers(toAppend) {
     currentOperandText += toAppend;
     currentOperandTextElement.innerText = currentOperandText;
   }
-  // Append user input into calculator display
 }
-
-// todo Clear any user input (and also what is stored in displayed variables)
-
-// ! Make sure user can't divide by 0
-
-// todo take care of delete button
 
 // Calculator functions
 const add = function (num1, num2) {
@@ -119,6 +116,7 @@ const multiply = function (num1, num2) {
 };
 
 const divide = function (num1, num2) {
+  // Make sure user can't divide by 0
   if (num2 == 0) {
     return "nah man...";
   } else {
@@ -126,6 +124,7 @@ const divide = function (num1, num2) {
   }
 };
 
+// Function that fires calculation based on user-chosen operator
 function operate(num1, num2, operatorFunction) {
   if (operatorFunction == "+") {
     return add(num1, num2);
@@ -140,16 +139,8 @@ function operate(num1, num2, operatorFunction) {
   }
   num1 = num2;
 }
-// * console.log(operate(2, 5, multiply)); // <-- this is how the operate function will be called at a button click of operand
 
-/*
-    JS responsible for page displaying correcly while height of the page is below 700px
-    
-    
-    
-    
-    
-    */
+// JS responsible for page displaying correcly while height of the page is below 700px
 function adjustCalcBackground(x) {
   let offsetHeight = document.querySelector("#output").offsetHeight;
   if (x.matches) {
