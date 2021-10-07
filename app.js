@@ -1,3 +1,4 @@
+// Get all buttons
 const numberButtons = document.querySelectorAll(".number-button");
 const operationButtons = document.querySelectorAll(".operator-button");
 const deleteButton = document.querySelector(".delete-button");
@@ -6,6 +7,7 @@ const equalsButton = document.querySelector(".result-button");
 const previousOperandTextElement = document.querySelector(".previous-operand");
 const currentOperandTextElement = document.querySelector(".current-operand");
 
+// Delete last character from current user input
 deleteButton.addEventListener("click", function () {
   currentOperandText = currentOperandText.substring(
     0,
@@ -15,6 +17,7 @@ deleteButton.addEventListener("click", function () {
   adjustCalcBackground(x);
 });
 
+// Delete all characters from current user input and stored variables
 allClearButton.addEventListener("click", function () {
   currentOperandText = "";
   previousOperandText = "";
@@ -23,6 +26,7 @@ allClearButton.addEventListener("click", function () {
   adjustCalcBackground(x);
 });
 
+// Call calculation function and update the display
 equalsButton.addEventListener("click", function () {
   previousOperandTextElement.innerText = `${previousOperandText} ${currentOperator} ${currentOperandText}`;
   previousOperandText = operate(
@@ -31,10 +35,10 @@ equalsButton.addEventListener("click", function () {
     currentOperator
   );
   currentOperandTextElement.innerText = previousOperandText;
+  previousOperandText = previousOperandText;
   currentOperator = "";
   adjustCalcBackground(x);
 });
-
 // Function reading certain operation buttons presses
 let operationButtonsArray = Array.from(operationButtons);
 
@@ -74,26 +78,30 @@ numberButtonsArray.forEach((button) =>
 // Append numbers to a variable and show them on the calculator display
 let currentOperandText = "";
 function appendNumbers(toAppend) {
-  if (toAppend === ".") {
+  if (currentOperandText == "" && toAppend == 0) {
+    currentOperandText = "";
+    currentOperandTextElement.innerText = 0;
+
+    // Make sure user can input only one decimal
+  } else if (toAppend === ".") {
     if (currentOperandText.includes(".")) {
       console.log(
         "oh You sneaky boiii - no number can contain double decimals..."
       );
     } else {
       currentOperandText += toAppend;
+      currentOperandTextElement.innerText = currentOperandText;
     }
   } else {
     currentOperandText += toAppend;
+    currentOperandTextElement.innerText = currentOperandText;
   }
   // Append user input into calculator display
-  currentOperandTextElement.innerText = currentOperandText;
 }
 
 // todo Clear any user input (and also what is stored in displayed variables)
 
 // ! Make sure user can't divide by 0
-
-// ! Make sure user can input only one decimal
 
 // todo take care of delete button
 
@@ -135,13 +143,13 @@ function operate(num1, num2, operatorFunction) {
 // * console.log(operate(2, 5, multiply)); // <-- this is how the operate function will be called at a button click of operand
 
 /*
-JS responsible for page displaying correcly while height of the page is below 700px
-
-
-
-
-
-*/
+    JS responsible for page displaying correcly while height of the page is below 700px
+    
+    
+    
+    
+    
+    */
 function adjustCalcBackground(x) {
   let offsetHeight = document.querySelector("#output").offsetHeight;
   if (x.matches) {
