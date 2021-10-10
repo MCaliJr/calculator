@@ -28,6 +28,10 @@ allClearButton.addEventListener("click", function () {
 
 // Call calculation function and update the display
 equalsButton.addEventListener("click", function () {
+  if (currentOperator == "") {
+    previousOperandTextElement.innerText = "";
+    return;
+  }
   previousOperandTextElement.innerText = `${previousOperandText} ${currentOperator} ${currentOperandText}`;
   previousOperandText = operate(
     previousOperandText,
