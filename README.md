@@ -1,6 +1,6 @@
 # Calculator
 
-Little project - basic calculator capable of performing simple arithmetic operations built using HTML5, CSS3 and JS ES6 features.
+Little project - basic calculator capable of performing simple arithmetic operations.
 
 👉 [**Check Live Demo**](https://mcalijr.github.io/calculator/)
 
