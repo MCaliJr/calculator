@@ -1,4 +1,4 @@
-# Calculator
+# Calculator 📚📐📏
 
 Little project - basic calculator capable of performing simple arithmetic operations.
 
