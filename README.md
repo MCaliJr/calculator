@@ -1,1 +1,21 @@
-Another Odin project - this time it is a simple calculator but we'll make it look really nice!
+# Calculator
+
+Little project - basic calculator capable of performing simple arithmetic operations built using HTML5, CSS3 and JS ES6 features.
+
+👉 [**Check Live Demo**](https://mcalijr.github.io/calculator/)
+
+## Technologies used
+
+- JavaScript (ES6)
+- HTML5
+- CSS3
+
+## Features
+
+- Support for basic arithmetic operations: additon, substraction, multiplication, division.
+- Options to **clear** the whole display or **delete** a single input from the end of current input.
+- Beautiful **glossy** look
+
+## Acknowledgement
+
+Project from curriculum of [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator).

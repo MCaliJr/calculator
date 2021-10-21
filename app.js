@@ -94,7 +94,7 @@ function appendNumbers(toAppend) {
   } else if (toAppend === ".") {
     if (currentOperandText.includes(".")) {
       console.log(
-        "oh You sneaky boiii - no number can contain double decimals..."
+        "oh You sneaky boiii - no number can contain double decimal..."
       );
     } else {
       currentOperandText += toAppend;
