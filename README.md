@@ -4,6 +4,8 @@ Little project - basic calculator capable of performing simple arithmetic operat
 
 👉 [**Check Live Demo**](https://mcalijr.github.io/calculator/)
 
+![Alt text](/READMEscreenshot.png "Design")
+
 ## Technologies used
 
 - JavaScript (ES6)
